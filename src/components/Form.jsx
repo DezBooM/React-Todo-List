@@ -4,7 +4,7 @@ export default function Form({ title, handleStatus, status, handleTitle, handleS
     return (
         <form>
             <input type="text" value={title} onChange={handleTitle} />
-            <button onClick={handleSubmit}>Add</button>
+            <button onClick={handleSubmit} disabled={!title}>Add</button>
             <select value={status} onChange={handleStatus}>
                 <option value="all">All</option>
                 <option value="not completed">Not completed</option>

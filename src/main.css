@@ -25,3 +25,7 @@ form {
 .time {
   font-size: .7rem;
 }
+
+button:disabled {
+  cursor: not-allowed;
+}

@@ -6,13 +6,13 @@ export default function List({ filtered, handleDelete, handleComplete }) {
     return (
         <div>
             <ul>
-            {filtered.map(todo => {
+            {filtered.length > 0 ? filtered.map(todo => {
                 return <TodoList 
                             key={todo.id} 
                             {...todo} 
                             handleDelete={() => handleDelete(todo.id)}
                             handleComplete={() => handleComplete(todo.id)}/>
-            })}
+            }) : <p>No todo found</p>}
             </ul>
         </div>
     )
