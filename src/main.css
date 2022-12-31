@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  height: 100vh;
+  margin: 0 5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.time {
+  font-size: .7rem;
+}
