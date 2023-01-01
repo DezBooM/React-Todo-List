@@ -2,7 +2,7 @@ import React from "react"
 import TodoList from "./TodoList"
 
 export default function List({ filtered, handleDelete, handleComplete }) { return (
-        <div>
+        <div className="list">
             <ul>
             {filtered.length > 0 ? filtered.map(todo => {
                 return <TodoList 

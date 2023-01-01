@@ -13,22 +13,25 @@ export default function TodoList({ title, handleComplete, handleDelete, time, co
     }
 
     return (
-        <div>
-            <li className={style.title}>{title}</li>
-            <p className="time">{format(new Date(time), `HH:mm, dd/MM/yyyy`)}</p>
-            <i  className={`fa-${style.completed} fa-square-check`}
-                onClick={handleComplete}
-                tabIndex="0" 
-                onKeyDown={handleComplete}
-                onMouseEnter={() => setCompletedIcon(true)}
-                onMouseLeave={() => setCompletedIcon(false)}
-                 />
-            <i  className={`fa-${style.hoverIcon} fa-trash-can`} 
-                onClick={handleDelete} 
-                tabIndex="0" 
-                onKeyDown={handleDelete}
-                onMouseEnter={() => setHoveredIcon(true)}
-                onMouseLeave={() => setHoveredIcon(false)} />
+        <div className="todo">
+            <div className="todo--text">
+                <li className={style.title}>{title}</li>
+                <p className="time">{format(new Date(time), `HH:mm, dd/MM/yyyy`)}</p>
+            </div>
+            <div>
+                <i  className={`fa-${style.completed} fa-square-check fa-2x`}
+                    onClick={handleComplete}
+                    onKeyDown={handleComplete}
+                    onMouseEnter={() => setCompletedIcon(true)}
+                    onMouseLeave={() => setCompletedIcon(false)}
+                    />
+                <i  className={`fa-${style.hoverIcon} fa-trash-can fa-2x`} 
+                    onClick={handleDelete} 
+                    onKeyDown={handleDelete}
+                    onMouseEnter={() => setHoveredIcon(true)}
+                    onMouseLeave={() => setHoveredIcon(false)} />
+            </div>
+            
         </div>
         
     )

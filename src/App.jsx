@@ -19,7 +19,7 @@ function App() {
     toast.error("Task deleted successfully",
                  {style: {
                     borderRadius: '10px',
-                    background: '#333',
+                    background: 'rgba(27,24,31,1)',
                     color: '#fff'}} )
     setTodos(prev => {
       return prev.filter(task => task.id !== id)
@@ -44,7 +44,7 @@ function App() {
     toast.success("Task added successfully",
                  {style: {
                     borderRadius: '10px',
-                    background: '#333',
+                    background: 'rgba(27,24,31,1)',
                     color: '#fff'}} ) 
   }
   

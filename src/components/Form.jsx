@@ -18,12 +18,11 @@ export default function Form({ title, handleStatus, status, handleTitle, handleS
                 value={title} 
                 onChange={handleTitle} 
                 onKeyDown={handleEnter} 
-                placeholder="Type here" />
+                placeholder="Type here"/>
             {title && <i 
                             className="fa-regular fa-plus" 
                             onClick={handleSubmit}
-                            onKeyDown={handleSubmit}
-                            tabIndex="0"/>}
+                            onKeyDown={handleSubmit}/>}
             </div>
             <select value={status} onChange={handleStatus}>
                 <option value="all">All</option>
