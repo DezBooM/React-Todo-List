@@ -26,6 +26,10 @@ form {
   font-size: .7rem;
 }
 
-button:disabled {
-  cursor: not-allowed;
+i {
+  cursor: pointer;
+}
+
+buton {
+  cursor: pointer;
 }

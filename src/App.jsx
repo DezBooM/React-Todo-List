@@ -4,7 +4,6 @@ import List from './components/List'
 import toast, { Toaster } from 'react-hot-toast'
 import { v4 as uuid } from 'uuid'
 
-
 function App() {
 
   const [title, setTitle] = useState("")
@@ -40,8 +39,10 @@ function App() {
                     background: '#333',
                     color: '#fff'}} ) 
   }
-
+  
   useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+    localStorage.setItem("status", JSON.stringify(status))
     switch(status) {
       case "completed": 
         setFiltered(todos.filter(todo => todo.completed))
@@ -55,14 +56,6 @@ function App() {
     }
   }, [todos, status])
 
-   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos))
-  }, [todos])
-
-  useEffect(() => {
-    localStorage.setItem("status", JSON.stringify(status))
-  }, [status])
-
   return (
     <div>
       <h1>Todo list</h1>
@@ -71,7 +64,7 @@ function App() {
         handleTitle = {handleTitle}
         status = {status}
         handleStatus = {handleStatus}
-        handleSubmit = {handleSubmit} />
+        handleSubmit = {handleSubmit}/>
       <List
         filtered = {filtered}
         handleDelete = {handleDelete}
