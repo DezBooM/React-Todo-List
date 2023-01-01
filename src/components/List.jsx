@@ -1,9 +1,7 @@
 import React from "react"
 import TodoList from "./TodoList"
 
-export default function List({ filtered, handleDelete, handleComplete }) {
-
-    return (
+export default function List({ filtered, handleDelete, handleComplete }) { return (
         <div>
             <ul>
             {filtered.length > 0 ? filtered.map(todo => {
@@ -11,7 +9,7 @@ export default function List({ filtered, handleDelete, handleComplete }) {
                             key={todo.id} 
                             {...todo} 
                             handleDelete={() => handleDelete(todo.id)}
-                            handleComplete={() => handleComplete(todo.id)}/>
+                            handleComplete={() => handleComplete(todo.id)} />
             }) : <p>No todo found</p>}
             </ul>
         </div>

@@ -15,9 +15,17 @@ function App() {
 
   const handleTitle = e => setTitle(e.target.value)
 
-  const handleDelete = id => setTodos(prev => {
-    return prev.filter(task => task.id !== id)
-})
+  const handleDelete = id => {
+    toast.error("Task deleted successfully",
+                 {style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff'}} )
+    setTodos(prev => {
+      return prev.filter(task => task.id !== id)
+      } 
+    )
+  }
 
   const handleComplete = id => setTodos(prev => prev.map(todo => {
     return todo.id === id ? {...todo, completed:!todo.completed} : todo}))
@@ -57,7 +65,7 @@ function App() {
   }, [todos, status])
 
   return (
-    <div>
+    <div className="app">
       <h1>Todo list</h1>
       <Form 
         title = {title}
