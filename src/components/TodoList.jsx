@@ -12,6 +12,18 @@ export default function TodoList({ title, handleComplete, handleDelete, time, co
         completed : completedIcon || completed ? "solid" : "regular"
     }
 
+    const handleEnterDelete = e => {
+        if(e.key === "Enter") {
+            handleDelete()
+        }
+    }
+
+    const handleEnterComplete = e => {
+        if(e.key === "Enter") {
+            handleComplete()
+        }
+    }
+
     return (
         <div className="todo">
             <div className="todo--text">
@@ -21,15 +33,16 @@ export default function TodoList({ title, handleComplete, handleDelete, time, co
             <div>
                 <i  className={`fa-${style.completed} fa-square-check fa-2x`}
                     onClick={handleComplete}
-                    onKeyDown={handleComplete}
+                    onKeyDown={handleEnterComplete}
                     onMouseEnter={() => setCompletedIcon(true)}
                     onMouseLeave={() => setCompletedIcon(false)}
-                    />
+                    tabIndex="0" />
                 <i  className={`fa-${style.hoverIcon} fa-trash-can fa-2x`} 
                     onClick={handleDelete} 
-                    onKeyDown={handleDelete}
+                    onKeyDown={handleEnterDelete}
                     onMouseEnter={() => setHoveredIcon(true)}
-                    onMouseLeave={() => setHoveredIcon(false)} />
+                    onMouseLeave={() => setHoveredIcon(false)}
+                    tabIndex="0" />
             </div>
             
         </div>

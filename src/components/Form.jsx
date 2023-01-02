@@ -22,7 +22,8 @@ export default function Form({ title, handleStatus, status, handleTitle, handleS
             {title && <i 
                             className="fa-regular fa-plus" 
                             onClick={handleSubmit}
-                            onKeyDown={handleSubmit}/>}
+                            onKeyDown={handleEnter}
+                            tabIndex="0"/>}
             </div>
             <select value={status} onChange={handleStatus}>
                 <option value="all">All</option>
