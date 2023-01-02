@@ -30,21 +30,20 @@ export default function TodoList({ title, handleComplete, handleDelete, time, co
                 <li className={style.title}>{title}</li>
                 <p className="time">{format(new Date(time), `HH:mm, dd/MM/yyyy`)}</p>
             </div>
-            <div>
-                <i  className={`fa-${style.completed} fa-square-check fa-2x`}
+            <div className="icons">
+                <i  className={`fa-${style.completed} fa-square-check fa-lg`}
                     onClick={handleComplete}
                     onKeyDown={handleEnterComplete}
                     onMouseEnter={() => setCompletedIcon(true)}
                     onMouseLeave={() => setCompletedIcon(false)}
                     tabIndex="0" />
-                <i  className={`fa-${style.hoverIcon} fa-trash-can fa-2x`} 
+                <i  className={`fa-${style.hoverIcon} fa-trash-can fa-lg`} 
                     onClick={handleDelete} 
                     onKeyDown={handleEnterDelete}
                     onMouseEnter={() => setHoveredIcon(true)}
                     onMouseLeave={() => setHoveredIcon(false)}
                     tabIndex="0" />
             </div>
-            
         </div>
         
     )
