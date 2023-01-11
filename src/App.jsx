@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import Form from './components/Form'
-import List from './components/List'
-import toast, { Toaster } from 'react-hot-toast'
-import { v4 as uuid } from 'uuid'
+import React, { useEffect, useState } from "react"
+import Form from "./components/Form"
+import List from "./components/List"
+import toast, { Toaster } from "react-hot-toast"
+import { v4 as uuid } from "uuid"
 
 function App() {
 
@@ -18,9 +18,9 @@ function App() {
   const handleDelete = id => {
     toast.error("Task deleted successfully",
                  {style: {
-                    borderRadius: '10px',
-                    background: '#050208',
-                    color: '#fff'}} )
+                    borderRadius: "10px",
+                    background: "#050208",
+                    color: "#fff"}} )
     setTodos(prev => {
       return prev.filter(task => task.id !== id)
       } 
@@ -43,9 +43,9 @@ function App() {
     setTitle("")
     toast.success("Task added successfully",
                  {style: {
-                    borderRadius: '10px',
-                    background: '#050208',
-                    color: '#fff'}} ) 
+                    borderRadius: "10px",
+                    background: "#050208",
+                    color: "#fff"}} ) 
   }
   
   useEffect(() => {

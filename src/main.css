@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: 'Share Tech Mono', monospace;
+  font-family: "Share Tech Mono", monospace;
   color: #FAF9F6;
   height: 100vh;
   background-image: linear-gradient(to right bottom, #050208, #13071b, #1b0c29, #220e38, #2b0e47, #330e56, #3b0d65, #440b74, #4c0c88, #540e9c, #5b11b1, #6114c7);
